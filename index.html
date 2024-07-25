@@ -12,12 +12,6 @@
                 return (<h1>{props.title}</h1>)
             }
 
-            function Homepage(){
-                return <div>
-                    {/*Nesting the header component*/}
-                    <Header title = "Learning react"/>
-                </div>;
-            }
 
             function Showlist() {
                 const pets  = ['Dog', 'Horse', 'Grace Hopper', 'Tiger'];
@@ -59,8 +53,19 @@
                     </div>
                 );
             }
+
+            
+            function Homepage(){
+                return <div>
+                    {/*Nesting the header component*/}
+                    <Header title = "Learning react"/>
+                    <Showlist/>
+                    <Likebutton/>
+                </div>;
+            }
+
             const root = ReactDOM.createRoot(app);
-            root.render(<Likebutton/>);
+            root.render(<Homepage/>);
         </script>
     </div>
  </body>
